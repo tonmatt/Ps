@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>BitLend - Bitcoin DeFi Lending</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <h1>BitLend - Bitcoin Lending App</h1>
+
+    <button onclick="connectWallet()">Connect Wallet</button>
+    <p id="wallet-status">❌ Wallet not connected</p>
+
+    <div class="card">
+      <h3>Deposit BTC</h3>
+      <input type="number" id="depositAmount" placeholder="Enter BTC amount"/>
+      <button onclick="depositBTC()">Deposit</button>
+      <p id="btcBalance">BTC Balance: 0</p>
+    </div>
+
+    <div class="card">
+      <h3>Borrow Tokens</h3>
+      <input type="number" id="borrowAmount" placeholder="Borrow amount"/>
+      <button onclick="borrowTokens()">Borrow</button>
+      <p id="tokenBalance">Token Balance: 0</p>
+      <p id="loanDetails">Loan + Interest: 0 tokens</p>
+    </div>
+
+    <div class="card">
+      <h3>Repay Loan</h3>
+      <button onclick="repayLoan()">Repay</button>
+    </div>
+  </div>
+<h2>Loan History</h2>
+<table>
+  <thead>
+    <tr>
+      <th>#</th>
+      <th>Amount (BTC)</th>
+      <th>Interest</th>
+      <th>Date</th>
+    </tr>
+  </thead>
+  <tbody id="loan-history-body">
+    <!-- Loan records will appear here -->
+  </tbody>
+</table>
+<h2>Repayment Progress</h2>
+<div class="progress-container">
+  <div id="progress-bar"></div>
+</div>
+<p id="repayment-status">No repayments yet</p>
+  <script src="script.js"></script>
+</body>
+</html>
